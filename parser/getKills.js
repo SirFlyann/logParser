@@ -1,4 +1,9 @@
 module.exports = function (el) {
-  // in each game, see how many lines start with the word "Kill". 
-  return (el.match(/Kill/g) || []).length;
+  var kills = (el.match(/.*\skilled\s.*/g) || []).map(function(kill) {
+    var separation = kill.split('killed');
+    var killer = separation[0].split(/[0-9]+\s[0-9]+\s[0-9]+:/g).slice(-1)[0].trim();
+    var victim = separation.slice(-1)[0].split(' by')[0].trim();
+    return [killer, victim];
+  });
+  return kills;
 }
