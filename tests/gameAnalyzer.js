@@ -2,14 +2,14 @@ var chai = require('chai');
 var expect = chai.expect;
 var gameAnalyzer = require('../parser/gameAnalyzer.js');
 
-describe('notReceivedParam', function() {
+describe('gameAnalyzer_NotReceivedParam', function() {
   it('should return an error if no param was passed', function() {
     var gameAnalysis = gameAnalyzer();
     expect(gameAnalysis).to.equal('No game to analyze!');
   });
 })
 
-describe('notReceivedArray', function() {
+describe('gameAnalyzer_NotReceivedArray', function() {
   it('should return an error if the parameter is not an array', function() {
     var gameAnalysisObject = gameAnalyzer({});
     var gameAnalysisString = gameAnalyzer('');
@@ -18,9 +18,9 @@ describe('notReceivedArray', function() {
   })
 });
 
-describe('isGood', function() {
-  it('should return an object if the parameter passed is a fine array of games', function() {
+describe('gameAnalyzer_IsGood', function() {
+  it('should return an object if the parameter passed is a valid array of games', function() {
     var gameAnalysis = gameAnalyzer([]);
-    expect(typeof(gameAnalysis)).to.equal('object');
+    expect(gameAnalysis).to.be.an('object');
   })
 });
