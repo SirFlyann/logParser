@@ -4,6 +4,13 @@ module.exports = function (el) {
 
   var getKills = require('./getKills.js');
 
+  if ((el == null) || (typeof(el) === 'undefined')) {
+    return 'No game to get players from!'
+  }
+
+  if (typeof(el) !== 'string') {
+    return 'Parameter is not a string!'
+  }
 
   // First we search for lines that have this pattern: n\<Player name>\t\<random-number>
   var getPlayers = el.match(/n\\.+\\t\\[0-9]/g).map(function(line) {
