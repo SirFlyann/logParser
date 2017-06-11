@@ -1,4 +1,11 @@
 module.exports = function(el) {
+  if ((el == null) || (typeof(el) === 'undefined')) {
+    return 'No game to get score from!';
+  }
+
+  if (typeof(el) !== 'string') {
+    return 'Parameter is not a string!';
+  }
   var getKills = require('./getKills.js');
   var score = {}; 
   var kills = getKills(el);
