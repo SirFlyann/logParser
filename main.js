@@ -10,8 +10,8 @@ var read = require('./parser/read.js');
 
 var server = new Hapi.Server();
 server.connection({
-  port: 3000, 
-  host: 'localhost'
+  port: process.env.PORT || 3000,
+  host: '0.0.0.0'
 });
 
 server.route({
