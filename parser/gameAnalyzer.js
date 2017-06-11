@@ -1,4 +1,12 @@
 module.exports = function (games) {
+  if ((games == null) || (typeof(games) === 'undefined')) {
+    return 'No game to analyze!'
+  }
+
+  if(!Array.isArray(games)) {
+    return 'Parameter is not an array!'
+  }
+
   var response = {};
   games.forEach(function(el, i) {
     // function that returns the number of kills in each match
