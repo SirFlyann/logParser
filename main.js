@@ -9,5 +9,4 @@ filePath = path.join(__dirname, 'games.log');
 
 // Opening the file and manipulating it;
 var response = read(filePath);
-
 console.log(response);
