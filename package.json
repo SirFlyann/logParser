@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "array-unique": "^0.3.2",
+    "hapi": "^16.4.3",
     "node-grok": "2.0.3"
   }
 }
